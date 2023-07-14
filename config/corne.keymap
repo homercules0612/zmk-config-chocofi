@@ -8,7 +8,21 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
+#define AS(keycode) &as LS(keycode) keycode     // Autoshift Macro
 / {
+    behaviors {
+        as: auto_shift {
+            compatible = "zmk,behavior-hold-tap";
+            label = "AUTO_SHIFT";
+            #binding-cells = <2>;
+            tapping_term_ms = <135>;
+            quick_tap_ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
+    };
+
+  {
         keymap {
                 compatible = "zmk,keymap";
 
@@ -16,13 +30,26 @@
 
                         bindings = <
 
-&none &kp Q             &kp W          &kp F          &kp P          &kp B          /**/  &kp J          &kp L          &kp U          &kp Y          &kp SQT        &none
-&none &kp A             &kp R          &kp S          &kp T          &kp G          /**/  &kp M          &kp N          &kp E          &kp I          &kp O          &none
-&none &kp X             &kp C          &kp D          &kp V          &kp Z          /**/  &kp K          &kp H          &kp COMMA      &kp DOT        &kp SLASH      &none
-                                             &kp ESC        &kp SPACE      &kp TAB        /**/  &kp RET        &kp BSPC       &kp DEL
+&none AS(Q)             AS(W)          AS(F)          AS(P)          AS(B)          /**/  AS(J)          AS(L)          AS(U)          AS(Y)          AS(SQT)        &none
+&none AS(A)             AS(R)          AS(S)          AS(T)          AS(G)          /**/  AS(M)          AS(N)          AS(E)          AS(I)          AS(O)          &none
+&none AS(X)             AS(C)          AS(D)          AS(V)          AS(Z)          /**/  AS(K)          AS(H)          &kp COMMA      &kp DOT        &kp SLASH      &none
+                                       &kp ESC        &kp SPACE      &kp TAB        /**/  &kp RET        &kp BSPC       &kp DEL
 
                         >;
                 };
+
+                num {
+
+                        bindings = <
+
+&none &mt CARET TILDE   &kp N7         &kp N8         &kp N9         &kp N0         /**/  &kp N6         &kp N7         &kp N8         &kp N9         &kp N0         &none
+&none &mt PIPE PRCNT    &kp N4         &kp N5         &kp N6         &kp DOT        /**/  &kp LEFT       &kp DOWN       &kp UP         &kp RIGHT      &trans         &none
+&none &mt AMPS HASH     &kp N1         &kp N2         &kp N3         &kp COMMA      /**/  &trans         &trans         &trans         &trans         &trans         &none
+                                       &kp LGUI       &trans         &kp SPACE      /**/  &kp RET        &trans         &kp RALT
+                        
+                        >;
+                };
+
                 blu_layer {
 
                         bindings = <
@@ -34,16 +61,5 @@
                         >;
                 };
 
-                num {
-
-                        bindings = <
-
-&none &mt CARET TILDE   &kp N7         &kp N8         &kp N9         &kp N0         /**/  &kp N6         &kp N7         &kp N8         &kp N9         &kp N0         &none
-&none &mt PIPE PRCNT    &kp N4         &kp N5         &kp N6         &kp DOT        /**/  &kp LEFT       &kp DOWN       &kp UP         &kp RIGHT      &trans         &none
-&none &mt AMPS HASH     &kp N1         &kp N2         &kp N3         &kp COMMA      /**/  &trans         &trans         &trans         &trans         &trans         &none
-                                             &kp LGUI       &trans         &kp SPACE      /**/  &kp RET        &trans         &kp RALT
-                        
-                        >;
-                };
         };
 };
