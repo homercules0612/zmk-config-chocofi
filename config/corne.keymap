@@ -83,7 +83,7 @@
 
                 num_layer {
 
-                        label="BASE";
+                        label="NUM";
                         bindings = <
 
 &none &mt TILDE CARET   AS(N7)           AS(N8)             AS(N9)            AS(N0)      /**/  &mt ASTRK PLUS    &mt UNDER MINUS   &mt RBRC LBRC     &trans            &trans         &none
