@@ -57,7 +57,7 @@
 
                 base_layer{
 
-                        label="BASE";
+                        label = "Base";
                         bindings = <
 
 &none AS(Q)             AS(W)             AS(F)             AS(P)             AS(B)       /**/  AS(J)             AS(L)             AS(U)             AS(Y)             AS(SQT)        &none
@@ -70,7 +70,7 @@
 
                 nav_layer{
 
-                        label="NAV";
+                        label = "Nav";
                         bindings = <
 
 &none &trans            &trans           &trans             &trans            &kp DEL     /**/  M_CUT             &kp PG_UP         &kp UP            &kp PG_DN         &trans         &none
@@ -83,7 +83,7 @@
 
                 num_layer {
 
-                        label="NUM";
+                        label = "Num";
                         bindings = <
 
 &none &mt TILDE CARET   &kp N7           &kp N8             &kp N9            &kp N0      /**/  &mt ASTRK PLUS    &mt UNDER MINUS   &mt RBRC LBRC     &trans            &trans         &none
@@ -96,7 +96,7 @@
 
                 sym_layer {
 
-                        label="SYM";
+                        label = "Sym";
                         bindings = <
 
 &none &mt GRAVE TILDE   &mt N7 CARET     &mt N8 FSLH        &mt N9 ASTRK      &mt N0 AT   /**/  &mt ASTRK PLUS    &mt UNDER MINUS   &mt RBRC LBRC     &trans            &trans         &none
@@ -109,7 +109,7 @@
 
                 blu_layer {
 
-                        label="BLU";
+                        label = "Blu";
                         bindings = <
                         
 &none &kp F1            &kp F2           &kp F3             &kp F4            &kp F5      /**/  &kp F6            &kp F7            &kp F8            &kp F9            &kp F10        &none
