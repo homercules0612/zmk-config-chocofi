@@ -12,13 +12,13 @@
         keymap {
                 compatible = "zmk,keymap";
 
-                alp_layer {
+                base {
 
                         bindings = <
 
-&none          &kp Q          &kp W          &kp F          &kp P          &kp B          /**/  &kp J          &kp L          &kp U          &kp Y          &kp SQT        &none
-&none          &kp A          &kp R          &kp S          &kp T          &kp G          /**/  &kp M          &kp N          &kp E          &kp I          &kp O          &none
-&none          &kp X          &kp C          &kp D          &kp V          &kp Z          /**/  &kp K          &kp H          &kp COMMA      &kp DOT        &kp SLASH      &none
+&none &kp Q             &kp W          &kp F          &kp P          &kp B          /**/  &kp J          &kp L          &kp U          &kp Y          &kp SQT        &none
+&none &kp A             &kp R          &kp S          &kp T          &kp G          /**/  &kp M          &kp N          &kp E          &kp I          &kp O          &none
+&none &kp X             &kp C          &kp D          &kp V          &kp Z          /**/  &kp K          &kp H          &kp COMMA      &kp DOT        &kp SLASH      &none
                                              &kp ESC        &kp SPACE      &kp TAB        /**/  &kp RET        &kp BSPC       &kp DEL
 
                         >;
@@ -27,20 +27,20 @@
 
                         bindings = <
                         
-&none          &kp N1         &kp N2         &kp N3         &kp N4         &kp N5         /**/  &kp N6         &kp N7         &kp N8         &kp N9         &kp N0         &none
-&none          &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3   &bt BT_SEL 4   /**/  &kp LEFT       &kp DOWN       &kp UP         &kp RIGHT      &trans         &none
-&none          &trans         &trans         &trans         &trans         &trans         /**/  &trans         &trans         &trans         &trans         &trans         &none
+&none &kp N1            &kp N2         &kp N3         &kp N4         &kp N5         /**/  &kp N6         &kp N7         &kp N8         &kp N9         &kp N0         &none
+&none &bt BT_SEL 0      &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3   &bt BT_SEL 4   /**/  &kp LEFT       &kp DOWN       &kp UP         &kp RIGHT      &trans         &none
+&none &trans            &trans         &trans         &trans         &trans         /**/  &trans         &trans         &trans         &trans         &trans         &none
                                              &kp LGUI       &trans         &kp SPACE      /**/  &kp RET        &trans         &kp RALT
                         >;
                 };
 
-                num_layer {
+                num {
 
                         bindings = <
 
-&none          &kp N1         &kp N2         &kp N3         &kp N4         &kp N5         /**/  &kp N6         &kp N7         &kp N8         &kp N9         &kp N0         &none
-&none          &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3   &bt BT_SEL 4   /**/  &kp LEFT       &kp DOWN       &kp UP         &kp RIGHT      &trans         &none
-&none          &trans         &trans         &trans         &trans         &trans         /**/  &trans         &trans         &trans         &trans         &trans         &none
+&none &mt CARET TILDE   &kp N7         &kp N8         &kp N9         &kp N0         /**/  &kp N6         &kp N7         &kp N8         &kp N9         &kp N0         &none
+&none &mt PIPE PRCNT    &kp N4         &kp N5         &kp N6         &kp DOT        /**/  &kp LEFT       &kp DOWN       &kp UP         &kp RIGHT      &trans         &none
+&none &mt AMPS HASH     &kp N1         &kp N2         &kp N3         &kp COMMA      /**/  &trans         &trans         &trans         &trans         &trans         &none
                                              &kp LGUI       &trans         &kp SPACE      /**/  &kp RET        &trans         &kp RALT
                         
                         >;
