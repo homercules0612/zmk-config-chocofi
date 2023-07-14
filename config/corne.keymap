@@ -12,11 +12,11 @@
 #define AS(keycode) &as LS(keycode) keycode
 
 // Windows Clipboard shortcuts
-#define REDO  &kp LC(Y)
-#define PASTE &kp LC(V)
-#define COPY  &kp LC(C)
-#define CUT   &kp LC(X)
-#define UNDO  &kp LC(Z)
+#define M_RDO  &kp LC(Y)
+#define M_PST  &kp LC(V)
+#define M_CPY  &kp LC(C)
+#define M_CUT  &kp LC(X)
+#define M_UDO  &kp LC(Z)
 
 // Layer definition
 #define BASE   0
@@ -78,9 +78,9 @@
 
                         bindings = <
 
-&none &trans            &trans           &trans             &trans            &kp DEL     /**/  CUT               &kp PG_UP         &kp UP            &kp PG_DN         &trans         &none
-&none &trans            &trans           &trans             &trans            PASTE       /**/  COPY              &kp LEFT          &kp DOWN          &kp RIGHT         &trans         &none
-&none &trans            &trans           &trans             &trans            REDO        /**/  UNDO              &kp HOME          &trans            &kp END           &trans         &none
+&none &trans            &trans           &trans             &trans            &kp DEL     /**/  M_CUT             &kp PG_UP         &kp UP            &kp PG_DN         &trans         &none
+&none &trans            &trans           &trans             &trans            M_PST       /**/  M_CPY             &kp LEFT          &kp DOWN          &kp RIGHT         &trans         &none
+&none &trans            &trans           &trans             &trans            M_RDO       /**/  M_UDO             &kp HOME          &trans            &kp END           &trans         &none
                                          &trans             &trans            &trans      /**/  &mo BLU           &trans            &tog NAV
 
                         >;
