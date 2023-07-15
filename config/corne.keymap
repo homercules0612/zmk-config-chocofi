@@ -57,33 +57,34 @@
 
                 base_layer {
 
-                        //label = "Base";
+                        label = "Base";
                         bindings = <
 
 &none AS(Q)             AS(W)             AS(F)             AS(P)             AS(B)       /**/  AS(J)             AS(L)             AS(U)             AS(Y)             AS(SQT)        &none
 &none AS(A)             AS(R)             AS(S)             AS(T)             AS(G)       /**/  AS(M)             AS(N)             AS(E)             AS(I)             AS(O)          &none
 &none AS(X)             AS(C)             AS(D)             AS(V)             AS(Z)       /**/  AS(K)             AS(H)             &mt BSLH COMMA    &mt FSLH DOT      &mt EXCL QMARK &none
-                                          &ew 0 ESC         &lt NAV SPACE     &lt SYM TAB /**/  &lt NUM RET       &kp BSPC          &tog NAV
-
+//                                        &ew 0 ESC         &lt NAV SPACE     &lt SYM TAB /**/  &lt NUM RET       &kp BSPC          &tog NAV
+                                          &ew 0 ESC         &trans            &trans      /**/  &trans            &kp BSPC          &tog NAV
                         >;
                 };
 
                 nav_layer{
 
-                        //label = "Nav";
+                        label = "Nav";
                         bindings = <
 
 &none &trans            &trans           &trans             &trans            &kp DEL     /**/  M_CUT             &kp PG_UP         &kp UP            &kp PG_DN         &trans         &none
 &none &trans            &trans           &trans             &trans            M_PST       /**/  M_CPY             &kp LEFT          &kp DOWN          &kp RIGHT         &trans         &none
 &none &trans            &trans           &trans             &trans            M_RDO       /**/  M_UDO             &kp HOME          &trans            &kp END           &trans         &none
-                                         &trans             &trans            &trans      /**/  &mo BLU           &trans            &tog NAV
+//                                       &trans             &trans            &trans      /**/  &mo BLU           &trans            &tog NAV
+                                         &trans             &trans            &trans      /**/  &trans            &trans            &tog NAV
 
                         >;
                 };
 
-                num_layer {
+             /*   num_layer {
 
-                        //label = "Num";
+                        label = "Num";
                         bindings = <
 
 &none &mt TILDE CARET   &kp N7           &kp N8             &kp N9            &kp N0      /**/  &mt ASTRK PLUS    &mt UNDER MINUS   &mt RBRC LBRC     &trans            &trans         &none
@@ -96,7 +97,7 @@
 
                 sym_layer {
 
-                        //label = "Sym";
+                        label = "Sym";
                         bindings = <
 
 &none &mt GRAVE TILDE   &mt KP_N7 CARET  &mt KP_N8 FSLH     &mt KP_N9 ASTRK   &mt KP_N0 AT/**/  &mt ASTRK PLUS    &mt UNDER MINUS   &mt RBRC LBRC     &trans            &trans         &none
@@ -109,7 +110,7 @@
 
                 blu_layer {
 
-                        //label = "Blu";
+                        label = "Blu";
                         bindings = <
                         
 &none &kp F1            &kp F2           &kp F3             &kp F4            &kp F5      /**/  &kp F6            &kp F7            &kp F8            &kp F9            &kp F10        &none
@@ -117,7 +118,7 @@
 &none &ext_power EP_TOG &trans           &trans             &trans            &trans      /**/  &trans            &trans            &trans            &trans            &trans         &none
                                          &bt BT_CLR         &trans            &bt BT_NXT  /**/  &bt BT_PRV        &trans            &trans
                         >;
-                };
+                }; */
 
         };
 };
