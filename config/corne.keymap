@@ -24,7 +24,7 @@
 #define NAV    1
 #define NUM    2
 #define SYM    3
-//#define BLU    4
+#define BLU    4
 //#define U_MOUSE  5
 //#define U_MEDIA  6
 //#define U_NUM    7
@@ -75,7 +75,7 @@
 &none &trans            &trans           &trans             &trans            &kp DEL     /**/  M_CUT             &kp PG_UP         &kp UP            &kp PG_DN         &kt LSHFT      &none
 &none &trans            &trans           &trans             &trans            M_PST       /**/  M_CPY             &kp LEFT          &kp DOWN          &kp RIGHT         &trans         &none
 &none &trans            &trans           &trans             &trans            M_RDO       /**/  M_UDO             &kp HOME          &trans            &kp END           &trans         &none
-                                         &trans             &trans            &trans      /**/  &mo NAV           &trans            &tog NAV
+                                         &trans             &trans            &trans      /**/  &mo BLU           &trans            &tog NAV
 
                         >;
                 };
@@ -105,17 +105,17 @@
                         >;
                 };
 
-//                blu_layer {
-//
-//                        label = "Blu";
-//                        bindings = <
-//                        
-//&none &kp F1            &kp F2           &kp F3             &kp F4            &kp F5      /**/  &kp F6            &kp F7            &kp F8            &kp F9            &kp F10        &none
-//&none &bt BT_SEL 0      &bt BT_SEL 1     &bt BT_SEL 2       &bt BT_SEL 3      &bt BT_SEL 4      &trans            &trans            &trans            &kp F11           &kp F12        &none
-//&none &ext_power EP_TOG &trans           &trans             &trans            &trans      /**/  &trans            &trans            &trans            &trans            &trans         &none
-//                                         &bt BT_CLR         &trans            &bt BT_NXT  /**/  &bt BT_PRV        &trans            &trans
-//                        >;
-//                };
+                blu_layer {
+
+                        label = "Blu";
+                        bindings = <
+                        
+&none &kp F1            &kp F2           &kp F3             &kp F4            &kp F5      /**/  &kp F6            &kp F7            &kp F8            &kp F9            &kp F10        &none
+&none &bt BT_SEL 0      &bt BT_SEL 1     &bt BT_SEL 2       &bt BT_SEL 3      &bt BT_SEL 4      &trans            &trans            &trans            &kp F11           &kp F12        &none
+&none &ext_power EP_TOG &trans           &trans             &trans            &trans      /**/  &trans            &trans            &trans            &trans            &trans         &none
+                                         &bt BT_CLR         &trans            &bt BT_NXT  /**/  &bt BT_PRV        &trans            &trans
+                        >;
+                };
 
         };
 };
