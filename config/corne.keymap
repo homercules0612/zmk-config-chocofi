@@ -22,9 +22,9 @@
 // Layer definition
 #define BASE   0
 #define NAV    1
-#define NUM    2
-#define SYM    3
-#define BLU    4
+//#define NUM    2
+//#define SYM    3
+//#define BLU    4
 //#define U_MOUSE  5
 //#define U_MEDIA  6
 //#define U_NUM    7
@@ -82,43 +82,43 @@
                         >;
                 };
 
-             /*   num_layer {
-
-                        label = "Num";
-                        bindings = <
-
-&none &mt TILDE CARET   &kp N7           &kp N8             &kp N9            &kp N0      /**/  &mt ASTRK PLUS    &mt UNDER MINUS   &mt RBRC LBRC     &trans            &trans         &none
-&none &mt PRCNT PIPE    &kp N4           &kp N5             &kp N6            &kp DOT     /**/  &mt BSLH FSLH     &mt EXCL EQUAL    &mt RPAR LPAR     &trans            &trans         &none
-&none &mt HASH AMPS     &kp N1           &kp N2             &kp N3            &kp COMMA   /**/  &mt PIPE AMPS     &mt GT LT         &mt RBKT LBKT     &trans            &trans         &none
-                                         &trans             &lt NAV SPACE     &trans      /**/  &trans            &kp DEL           &trans
-                        
-                        >;
-                };
-
-                sym_layer {
-
-                        label = "Sym";
-                        bindings = <
-
-&none &mt GRAVE TILDE   &mt KP_N7 CARET  &mt KP_N8 FSLH     &mt KP_N9 ASTRK   &mt KP_N0 AT/**/  &mt ASTRK PLUS    &mt UNDER MINUS   &mt RBRC LBRC     &trans            &trans         &none
-&none &mt PRCNT PIPE    &mt KP_N4 COMMA  &mt KP_N5 SEMI     &mt KP_N6 COLON   &mt DLLR QMARK    &mt BSLH FSLH     &mt EXCL EQUAL    &mt RPAR LPAR     &trans            &trans         &none
-&none &mt HASH AMPS     &mt KP_N1 DOT    &mt KP_N2 LT       &mt KP_N3 GT      &kp SQT DQT /**/  &mt PIPE AMPS     &mt GT LT         &mt RBKT LBKT     &trans            &trans         &none
-                                         &trans             &lt NAV SPACE     &trans      /**/  &trans            &kp DEL           &trans
-                        
-                        >;
-                };
-
-                blu_layer {
-
-                        label = "Blu";
-                        bindings = <
-                        
-&none &kp F1            &kp F2           &kp F3             &kp F4            &kp F5      /**/  &kp F6            &kp F7            &kp F8            &kp F9            &kp F10        &none
-&none &bt BT_SEL 0      &bt BT_SEL 1     &bt BT_SEL 2       &bt BT_SEL 3      &bt BT_SEL 4/**/  &trans            &trans            &trans            &kp F11           &kp F12        &none
-&none &ext_power EP_TOG &trans           &trans             &trans            &trans      /**/  &trans            &trans            &trans            &trans            &trans         &none
-                                         &bt BT_CLR         &trans            &bt BT_NXT  /**/  &bt BT_PRV        &trans            &trans
-                        >;
-                }; */
+//                num_layer {
+//
+//                        label = "Num";
+//                        bindings = <
+//
+//&none &mt TILDE CARET   &kp N7           &kp N8             &kp N9            &kp N0      /**/  &mt ASTRK PLUS    &mt UNDER MINUS   &mt RBRC LBRC     &trans            &trans         &none
+//&none &mt PRCNT PIPE    &kp N4           &kp N5             &kp N6            &kp DOT     /**/  &mt BSLH FSLH     &mt EXCL EQUAL    &mt RPAR LPAR     &trans            &trans         &none
+//&none &mt HASH AMPS     &kp N1           &kp N2             &kp N3            &kp COMMA   /**/  &mt PIPE AMPS     &mt GT LT         &mt RBKT LBKT     &trans            &trans         &none
+//                                         &trans             &lt NAV SPACE     &trans      /**/  &trans            &kp DEL           &trans
+//                        
+//                        >;
+//                };
+//
+//                sym_layer {
+//
+//                        label = "Sym";
+//                        bindings = <
+//
+//&none &mt GRAVE TILDE   &mt KP_N7 CARET  &mt KP_N8 FSLH     &mt KP_N9 ASTRK   &mt KP_N0 AT/**/  &mt ASTRK PLUS    &mt UNDER MINUS   &mt RBRC LBRC     &trans            &trans         &none
+//&none &mt PRCNT PIPE    &mt KP_N4 COMMA  &mt KP_N5 SEMI     &mt KP_N6 COLON   &mt DLLR QMARK    &mt BSLH FSLH     &mt EXCL EQUAL    &mt RPAR LPAR     &trans            &trans         &none
+//&none &mt HASH AMPS     &mt KP_N1 DOT    &mt KP_N2 LT       &mt KP_N3 GT      &kp SQT DQT /**/  &mt PIPE AMPS     &mt GT LT         &mt RBKT LBKT     &trans            &trans         &none
+//                                         &trans             &lt NAV SPACE     &trans      /**/  &trans            &kp DEL           &trans
+//                        
+//                        >;
+//                };
+//
+//                blu_layer {
+//
+//                        label = "Blu";
+//                        bindings = <
+//                        
+//&none &kp F1            &kp F2           &kp F3             &kp F4            &kp F5      /**/  &kp F6            &kp F7            &kp F8            &kp F9            &kp F10        &none
+//&none &bt BT_SEL 0      &bt BT_SEL 1     &bt BT_SEL 2       &bt BT_SEL 3      &bt BT_SEL 4/**/  &trans            &trans            &trans            &kp F11           &kp F12        &none
+//&none &ext_power EP_TOG &trans           &trans             &trans            &trans      /**/  &trans            &trans            &trans            &trans            &trans         &none
+//                                         &bt BT_CLR         &trans            &bt BT_NXT  /**/  &bt BT_PRV        &trans            &trans
+//                        >;
+//                };
 
         };
 };
