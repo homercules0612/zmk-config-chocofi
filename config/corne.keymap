@@ -63,7 +63,7 @@
 &none &trans            &trans           &trans             &trans            &kp DEL     /**/  M_CUT             &kp PG_UP         &kp UP            &kp PG_DN         &kt LSHFT      &none
 &none &trans            &trans           &trans             &trans            M_PST       /**/  M_CPY             &kp LEFT          &kp DOWN          &kp RIGHT         &trans         &none
 &none &trans            &trans           &trans             &trans            M_RDO       /**/  M_UDO             &kp HOME          &trans            &kp END           &trans         &none
-                                         &trans             &trans            &trans      /**/  &mo BLU           &trans            &tog NAV
+                                         &trans             &trans            &trans      /**/  &mo BLU           &trans            &tog BASE
 
                         >;
                 };
@@ -76,7 +76,7 @@
 &none AS(Q)             AS(W)             AS(F)             AS(P)             AS(B)       /**/  AS(J)             AS(L)             AS(U)             AS(Y)             AS(SQT)        &none
 &none AS(A)             AS(R)             AS(S)             AS(T)             AS(G)       /**/  AS(M)             AS(N)             AS(E)             AS(I)             AS(O)          &none
 &none AS(X)             AS(C)             AS(D)             AS(V)             AS(Z)       /**/  AS(K)             AS(H)             &mt BSLH COMMA    &mt FSLH DOT      &mt EXCL QMARK &none
-                                          &ew 0 ESC         &lt NAV SPACE     &lt SYM TAB /**/  &lt NUM RET       &kp BSPC          &tog NAV
+                                          &ew 0 ESC         &lt NAV SPACE     &lt SYM TAB /**/  &lt NUM RET       &kp BSPC          &tog BASE
                         >;
                 };
 
