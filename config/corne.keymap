@@ -57,7 +57,7 @@
             #binding-cells = <2>;
             tapping_term_ms = <200>;
             flavor = "tap-preferred";
-            bindings = <&tog>, <&sk>;
+            bindings = <&kt>, <&sk>;
         };
      };
 
@@ -97,7 +97,7 @@
 
 &none &mt TILDE CARET   AS(N7)           AS(N8)             AS(N9)            AS(N0)      /**/  &mt ASTRK PLUS    &mt UNDER MINUS   &mt RBRC LBRC     &trans            &trans         &none
 &none &mt PRCNT PIPE    AS(N4)           AS(N5)             AS(N6)            AS(DOT)     /**/  &mt BSLH FSLH     &mt EXCL EQUAL    &mt RPAR LPAR     &trans            &trans         &none
-&none &mt HASH AMPS     AS(N1)           AS(N2)             AS(N3)            AS(COMMA)   /**/  &mt PIPE AMPS     &mt GT LT         &mt RBKT LBKT     &trans            &trans         &none
+&none &mt HASH AMPS     AS(N1)           AS(N2)             AS(N3)            AS(COMMA   /**/  &mt PIPE AMPS     &mt GT LT         &mt RBKT LBKT     &trans            &trans         &none
                                          &trans             &lt NAV SPACE     &trans      /**/  &trans            &kp DEL           &trans
                         
                         >;
