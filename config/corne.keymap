@@ -20,8 +20,8 @@
 #define M_UDO  &kp LC(Z)
 
 // Layer definition
-#define BASE   0
-#define NAV    1
+#define NAV    0
+#define BASE   1
 #define NUM    2
 #define SYM    3
 #define BLU    4
@@ -55,18 +55,6 @@
      keymap {
                 compatible = "zmk,keymap";
 
-                base_layer {
-
-                        label = "Base";
-                        bindings = <
-
-&none AS(Q)             AS(W)             AS(F)             AS(P)             AS(B)       /**/  AS(J)             AS(L)             AS(U)             AS(Y)             AS(SQT)        &none
-&none AS(A)             AS(R)             AS(S)             AS(T)             AS(G)       /**/  AS(M)             AS(N)             AS(E)             AS(I)             AS(O)          &none
-&none AS(X)             AS(C)             AS(D)             AS(V)             AS(Z)       /**/  AS(K)             AS(H)             &mt BSLH COMMA    &mt FSLH DOT      &mt EXCL QMARK &none
-                                          &ew 0 ESC         &lt NAV SPACE     &lt SYM TAB /**/  &lt NUM RET       &kp BSPC          &tog NAV
-                        >;
-                };
-
                 nav_layer{
 
                         label = "Nav";
@@ -77,6 +65,18 @@
 &none &trans            &trans           &trans             &trans            M_RDO       /**/  M_UDO             &kp HOME          &trans            &kp END           &trans         &none
                                          &trans             &trans            &trans      /**/  &mo BLU           &trans            &tog NAV
 
+                        >;
+                };
+
+                base_layer {
+
+                        label = "Base";
+                        bindings = <
+
+&none AS(Q)             AS(W)             AS(F)             AS(P)             AS(B)       /**/  AS(J)             AS(L)             AS(U)             AS(Y)             AS(SQT)        &none
+&none AS(A)             AS(R)             AS(S)             AS(T)             AS(G)       /**/  AS(M)             AS(N)             AS(E)             AS(I)             AS(O)          &none
+&none AS(X)             AS(C)             AS(D)             AS(V)             AS(Z)       /**/  AS(K)             AS(H)             &mt BSLH COMMA    &mt FSLH DOT      &mt EXCL QMARK &none
+                                          &ew 0 ESC         &lt NAV SPACE     &lt SYM TAB /**/  &lt NUM RET       &kp BSPC          &tog NAV
                         >;
                 };
 
@@ -98,9 +98,9 @@
                         label = "Sym";
                         bindings = <
 
-&none &mt GRAVE TILDE   &mt KP_N7 CARET  &mt KP_N8 FSLH     &mt KP_N9 ASTRK   &mt KP_N0 AT      &mt ASTRK PLUS    &mt UNDER MINUS   &mt RBRC LBRC     &trans            &trans         &none
-&none &mt PRCNT PIPE    &mt KP_N4 COMMA  &mt KP_N5 SEMI     &mt KP_N6 COLON   &mt DLLR QMARK    &mt BSLH FSLH     &mt EXCL EQUAL    &mt RPAR LPAR     &trans            &trans         &none
-&none &mt HASH AMPS     &mt KP_N1 DOT    &mt KP_N2 LT       &mt KP_N3 GT      &mt SQT DQT /**/  &mt PIPE AMPS     &mt GT LT         &mt RBKT LBKT     &trans            &trans         &none
+&none &mt GRAVE TILDE   &mt N7 CARET     &mt N8 FSLH        &mt N9 ASTRK      &mt N0 AT         &mt ASTRK PLUS    &mt UNDER MINUS   &mt RBRC LBRC     &trans            &trans         &none
+&none &mt PRCNT PIPE    &mt N4 COMMA     &mt N5 SEMI        &mt N6 COLON      &mt DLLR QMARK    &mt BSLH FSLH     &mt EXCL EQUAL    &mt RPAR LPAR     &trans            &trans         &none
+&none &mt HASH AMPS     &mt N1 DOT       &mt N2 LT          &mt N3 GT         &mt SQT DQT /**/  &mt PIPE AMPS     &mt GT LT         &mt RBKT LBKT     &trans            &trans         &none
                                          &trans             &lt NAV SPACE     &trans      /**/  &trans            &kp DEL           &trans                        
                         >;
                 };
