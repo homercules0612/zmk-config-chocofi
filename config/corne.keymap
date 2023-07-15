@@ -22,7 +22,7 @@
 // Layer definition
 #define BASE   0
 #define NAV    1
-//#define NUM    2
+#define NUM    2
 //#define SYM    3
 //#define BLU    4
 //#define U_MOUSE  5
@@ -82,19 +82,19 @@
                         >;
                 };
 
-//                num_layer {
-//
-//                        label = "Num";
-//                        bindings = <
-//
-//&none &mt TILDE CARET   &kp N7           &kp N8             &kp N9            &kp N0      /**/  &mt ASTRK PLUS    &mt UNDER MINUS   &mt RBRC LBRC     &trans            &trans         &none
-//&none &mt PRCNT PIPE    &kp N4           &kp N5             &kp N6            &kp DOT     /**/  &mt BSLH FSLH     &mt EXCL EQUAL    &mt RPAR LPAR     &trans            &trans         &none
-//&none &mt HASH AMPS     &kp N1           &kp N2             &kp N3            &kp COMMA   /**/  &mt PIPE AMPS     &mt GT LT         &mt RBKT LBKT     &trans            &trans         &none
-//                                         &trans             &lt NAV SPACE     &trans      /**/  &trans            &kp DEL           &trans
-//                        
-//                        >;
-//                };
-//
+                num_layer {
+
+                        label = "Num";
+                        bindings = <
+
+&none &mt TILDE CARET   &kp N7           &kp N8             &kp N9            &kp N0      /**/  &mt ASTRK PLUS    &mt UNDER MINUS   &mt RBRC LBRC     &trans            &trans         &none
+&none &mt PRCNT PIPE    &kp N4           &kp N5             &kp N6            &kp DOT     /**/  &mt BSLH FSLH     &mt EXCL EQUAL    &mt RPAR LPAR     &trans            &trans         &none
+&none &mt HASH AMPS     &kp N1           &kp N2             &kp N3            &kp COMMA   /**/  &mt PIPE AMPS     &mt GT LT         &mt RBKT LBKT     &trans            &trans         &none
+                                         &trans             &lt NAV SPACE     &trans      /**/  &trans            &kp DEL           &trans
+                        
+                        >;
+                };
+
 //                sym_layer {
 //
 //                        label = "Sym";
