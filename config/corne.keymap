@@ -64,9 +64,7 @@
             bindings = <&sys_reset>;
         };
     };
-};
 
-/ {
      behaviors {
         as: auto_shift {
             compatible = "zmk,behavior-hold-tap";
