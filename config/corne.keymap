@@ -64,7 +64,9 @@
             bindings = <&sys_reset>;
         };
     };
+};
 
+/ {
      behaviors {
         as: auto_shift {
             compatible = "zmk,behavior-hold-tap";
@@ -89,7 +91,7 @@
             #binding-cells = <2>;
             tapping_term_ms = <150>;
             flavor = "tap-preferred";
-            bindings = <&sk>, <&tk>;
+            bindings = <&sk>, <&kt>;
         };
      };
 
