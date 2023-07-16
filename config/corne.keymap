@@ -45,12 +45,12 @@
         };
         combo_bspc {
             timeout-ms = <50>;
-            key-positions = <4 5>;
+            key-positions = <3 4>;
             bindings = <&kp BSPC>;
         };
         combo_del  {
             timeout-ms = <50>;
-            key-positions = <6 7>;
+            key-positions = <7 8>;
             bindings = <&kp DEL>;
         };
         combo_sysrstL {
@@ -63,6 +63,11 @@
             key-positions = <6 10>;
             bindings = <&sys_reset>;
         };
+        combo_blu_layer {
+            timeout-ms = <50>;
+            key-positions = <12 24>;
+            bindings = <&to BLU>;
+        };
     };
 };
 
@@ -72,19 +77,11 @@
             compatible = "zmk,behavior-hold-tap";
             label = "AUTO_SHIFT";
             #binding-cells = <2>;
-            tapping_term_ms = <150>;
+            tapping_term_ms = <200>;
             quick_tap_ms = <0>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         }; 
-        ew: esc_cword {
-            compatible = "zmk,behavior-hold-tap";
-            label = "esc_cword";
-            #binding-cells = <2>;
-            tapping_term_ms = <150>;
-            flavor = "tap-preferred";
-            bindings = <&caps_word>, <&kp>;
-        };
         ts: toggle_stick {
             compatible = "zmk,behavior-hold-tap";
             label = "togglestick";
@@ -106,7 +103,7 @@
 XXX   AS(Q)             AS(W)             AS(F)             AS(P)             AS(B)       /**/  AS(J)             AS(L)             AS(U)             AS(Y)             AS(SQT)        XXX  
 XXX   AS(A)             AS(R)             AS(S)             AS(T)             AS(G)       /**/  AS(M)             AS(N)             AS(E)             AS(I)             AS(O)          XXX  
 XXX   AS(X)             AS(C)             AS(D)             AS(V)             AS(Z)       /**/  AS(K)             AS(H)             &mt BSLH COMMA    &mt FSLH DOT      &mt EXCL QMARK XXX  
-                                          &ew 0 ESC         &lt NAV SPACE     &lt SYM TAB /**/  &lt NUM RET       &kp BSPC          &tog NAV
+                                          &caps_word        &lt NAV SPACE     &lt SYM TAB /**/  &lt NUM RET       KNA               &tog NAV
  
                         >;
                 };
@@ -119,7 +116,7 @@ XXX   AS(X)             AS(C)             AS(D)             AS(V)             AS
 XXX   KNA               KNA              KNA                KNA               &kp DEL     /**/  M_CUT             &kp PG_UP         &kp UP            &kp PG_DN         TS(LCTRL)      XXX  
 XXX   KNA               KNA              KNA                KNA               M_PST       /**/  M_CPY             &kp LEFT          &kp DOWN          &kp RIGHT         TS(LSHFT)      XXX  
 XXX   KNA               KNA              KNA                KNA               M_RDO       /**/  M_UDO             &kp HOME          KNA               &kp END           &sk LALT       XXX  
-                                         KNA                KNA               KNA         /**/  &lt NUM RET       &kp BSPC          &tog NAV
+                                         KNA                &lt BASE SPACE    &lt SYM TAB /**/  &lt NUM RET       KNA               &tog NAV
 
                         >;
                 };
