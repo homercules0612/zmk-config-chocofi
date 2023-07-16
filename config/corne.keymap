@@ -9,9 +9,12 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/ext_power.h>
 
-// Autoshift Macro
-#define AS(keycode) &as LS(keycode) keycode
-#define SH(keycode) &sh keycode keycode
+#define XXX &none         // no physical keys
+#define KNA &none         // key not applicable / unused
+
+// Macros
+#define AS(keycode) &as LS(keycode) keycode   // Autoshift
+#define TS(keycode) &ts keycode keycode       // togglestick
 
 // Windows Clipboard shortcuts
 #define M_RDO  &kp LC(Y)
@@ -33,6 +36,37 @@
 //#define U_FUN    9
 
 / {
+    combos {
+        compatible = "zmk,combos";
+        combo_esc  {
+            timeout-ms = <50>;
+            key-positions = <1 2>;
+            bindings = <&kp ESC>;
+        };
+        combo_bspc {
+            timeout-ms = <50>;
+            key-positions = <4 5>;
+            bindings = <&kp BSPC>;
+        };
+        combo_del  {
+            timeout-ms = <50>;
+            key-positions = <6 7>;
+            bindings = <&kp DEL>;
+        };
+        combo_sysrstL {
+            timeout-ms = <50>;
+            key-positions = <1 5>;
+            bindings = <&sys_reset>;
+        };
+        combo_sysrstR {
+            timeout-ms = <50>;
+            key-positions = <6 10>;
+            bindings = <&sys_reset>;
+        };
+    };
+};
+
+/ {
      behaviors {
         as: auto_shift {
             compatible = "zmk,behavior-hold-tap";
@@ -51,13 +85,13 @@
             flavor = "tap-preferred";
             bindings = <&caps_word>, <&kp>;
         };
-        sh: sticky_hold {
+        ts: toggle_stick {
             compatible = "zmk,behavior-hold-tap";
-            label = "sticky_hold";
+            label = "togglestick";
             #binding-cells = <2>;
             tapping_term_ms = <150>;
             flavor = "tap-preferred";
-            bindings = <&kt>, <&sk>;
+            bindings = <&sk>, <&tk>;
         };
      };
 
@@ -69,23 +103,23 @@
                         label = "Base";
                         bindings = <
 
-&none AS(Q)             AS(W)             AS(F)             AS(P)             AS(B)       /**/  AS(J)             AS(L)             AS(U)             AS(Y)             AS(SQT)        &none
-&none AS(A)             AS(R)             AS(S)             AS(T)             AS(G)       /**/  AS(M)             AS(N)             AS(E)             AS(I)             AS(O)          &none
-&none AS(X)             AS(C)             AS(D)             AS(V)             AS(Z)       /**/  AS(K)             AS(H)             &mt BSLH COMMA    &mt FSLH DOT      &mt EXCL QMARK &none
+XXX   AS(Q)             AS(W)             AS(F)             AS(P)             AS(B)       /**/  AS(J)             AS(L)             AS(U)             AS(Y)             AS(SQT)        XXX  
+XXX   AS(A)             AS(R)             AS(S)             AS(T)             AS(G)       /**/  AS(M)             AS(N)             AS(E)             AS(I)             AS(O)          XXX  
+XXX   AS(X)             AS(C)             AS(D)             AS(V)             AS(Z)       /**/  AS(K)             AS(H)             &mt BSLH COMMA    &mt FSLH DOT      &mt EXCL QMARK XXX  
                                           &ew 0 ESC         &lt NAV SPACE     &lt SYM TAB /**/  &lt NUM RET       &kp BSPC          &tog NAV
  
                         >;
                 };
 
-                nav_layer{
+                nav_layer {
 
                         label = "Nav";
                         bindings = <
 
-&none &trans            &trans           &trans             &trans            &kp DEL     /**/  M_CUT             &kp PG_UP         &kp UP            &kp PG_DN         SH(LCTRL)      &none
-&none &trans            &trans           &trans             &trans            M_PST       /**/  M_CPY             &kp LEFT          &kp DOWN          &kp RIGHT         SH(LSHFT)      &none
-&none &trans            &trans           &trans             &trans            M_RDO       /**/  M_UDO             &kp HOME          &trans            &kp END           &sk LALT       &none
-                                         &trans             &trans            &trans      /**/  &lt NUM RET       &kp BSPC          &tog NAV
+XXX   KNA               KNA              KNA                KNA               &kp DEL     /**/  M_CUT             &kp PG_UP         &kp UP            &kp PG_DN         TS(LCTRL)      XXX  
+XXX   KNA               KNA              KNA                KNA               M_PST       /**/  M_CPY             &kp LEFT          &kp DOWN          &kp RIGHT         TS(LSHFT)      XXX  
+XXX   KNA               KNA              KNA                KNA               M_RDO       /**/  M_UDO             &kp HOME          KNA               &kp END           &sk LALT       XXX  
+                                         KNA                KNA               KNA         /**/  &lt NUM RET       &kp BSPC          &tog NAV
 
                         >;
                 };
@@ -95,10 +129,10 @@
                         label = "Num";
                         bindings = <
 
-&none &mt TILDE CARET   AS(N7)           AS(N8)             AS(N9)            AS(N0)      /**/  &mt ASTRK PLUS    &mt UNDER MINUS   &mt RBRC LBRC     &trans            &trans         &none
-&none &mt PRCNT PIPE    AS(N4)           AS(N5)             AS(N6)            AS(DOT)     /**/  &mt BSLH FSLH     &mt EXCL EQUAL    &mt RPAR LPAR     &trans            &trans         &none
-&none &mt HASH AMPS     AS(N1)           AS(N2)             AS(N3)            AS(COMMA)   /**/  &mt PIPE AMPS     &mt GT LT         &mt RBKT LBKT     &trans            &trans         &none
-                                         &trans             &lt NAV SPACE     &trans      /**/  &trans            &kp DEL           &trans
+XXX   &mt TILDE CARET   AS(N7)           AS(N8)             AS(N9)            AS(N0)      /**/  &mt ASTRK PLUS    &mt UNDER MINUS   &mt RBRC LBRC     KNA               KNA            XXX  
+XXX   &mt PRCNT PIPE    AS(N4)           AS(N5)             AS(N6)            AS(DOT)     /**/  &mt BSLH FSLH     &mt EXCL EQUAL    &mt RPAR LPAR     KNA               KNA            XXX  
+XXX   &mt HASH AMPS     AS(N1)           AS(N2)             AS(N3)            AS(COMMA)   /**/  &mt PIPE AMPS     &mt GT LT         &mt RBKT LBKT     KNA               KNA            XXX  
+                                         KNA                &lt NAV SPACE     KNA         /**/  KNA               &kp DEL           KNA   
                         
                         >;
                 };
@@ -108,10 +142,10 @@
                         label = "Sym";
                         bindings = <
 
-&none &mt GRAVE TILDE   &mt N7 CARET     &mt N8 FSLH        &mt N9 ASTRK      &mt N0 AT         &mt ASTRK PLUS    &mt UNDER MINUS   &mt RBRC LBRC     &trans            &trans         &none
-&none &mt PRCNT PIPE    &mt N4 COMMA     &mt N5 SEMI        &mt N6 COLON      &mt DLLR QMARK    &mt BSLH FSLH     &mt EXCL EQUAL    &mt RPAR LPAR     &trans            &trans         &none
-&none &mt HASH AMPS     &mt N1 DOT       &mt N2 LT          &mt N3 GT         &mt SQT DQT /**/  &mt PIPE AMPS     &mt GT LT         &mt RBKT LBKT     &trans            &trans         &none
-                                         &trans             &lt NAV SPACE     &trans      /**/  &trans            &kp DEL           &trans                        
+XXX   &mt GRAVE TILDE   &mt N7 CARET     &mt N8 FSLH        &mt N9 ASTRK      &mt N0 AT         &mt ASTRK PLUS    &mt UNDER MINUS   &mt RBRC LBRC     KNA               KNA            XXX  
+XXX   &mt PRCNT PIPE    &mt N4 COMMA     &mt N5 SEMI        &mt N6 COLON      &mt DLLR QMARK    &mt BSLH FSLH     &mt EXCL EQUAL    &mt RPAR LPAR     KNA               KNA            XXX  
+XXX   &mt HASH AMPS     &mt N1 DOT       &mt N2 LT          &mt N3 GT         &mt SQT DQT /**/  &mt PIPE AMPS     &mt GT LT         &mt RBKT LBKT     KNA               KNA            XXX  
+                                         KNA                &lt NAV SPACE     KNA         /**/  KNA               &kp DEL           KNA                           
 
                         >;
                 };
@@ -121,10 +155,10 @@
                         label = "Blu";
                         bindings = <
                         
-&none &kp F1            &kp F2           &kp F3             &kp F4            &kp F5      /**/  &kp F6            &kp F7            &kp F8            &kp F9            &kp F10        &none
-&none &bt BT_SEL 0      &bt BT_SEL 1     &bt BT_SEL 2       &bt BT_SEL 3      &bt BT_SEL 4      &trans            &trans            &trans            &kp F11           &kp F12        &none
-&none &ext_power EP_TOG &trans           &trans             &trans            &trans      /**/  &trans            &trans            &trans            &trans            &trans         &none
-                                         &bt BT_CLR         &trans            &bt BT_NXT  /**/  &bt BT_PRV        &trans            &trans
+XXX   &kp F1            &kp F2           &kp F3             &kp F4            &kp F5      /**/  &kp F6            &kp F7            &kp F8            &kp F9            &kp F10        XXX  
+XXX   &bt BT_SEL 0      &bt BT_SEL 1     &bt BT_SEL 2       &bt BT_SEL 3      &bt BT_SEL 4      KNA               KNA               KNA               &kp F11           &kp F12        XXX  
+XXX   &ext_power EP_TOG KNA              KNA                KNA               KNA         /**/  KNA               KNA               KNA               KNA               KNA            XXX  
+                                         &bt BT_CLR         KNA               &bt BT_NXT  /**/  &bt BT_PRV        KNA               KNA   
 
                         >;
                 };
