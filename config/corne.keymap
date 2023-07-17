@@ -76,7 +76,7 @@
         combo_blu_layer {
             timeout-ms = <50>;
             key-positions = <13 25>;
-            bindings = <&to BLU>;
+            bindings = <&tog BLU>;
         };
     };
 };
