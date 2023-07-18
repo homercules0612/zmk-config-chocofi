@@ -39,10 +39,22 @@
 / {
     macros {
         MCR_selC: sel_word_cur {
-            label = "macro_select_word_current";
+            label = "macro_selectword_current";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_tap &kp LC(LEFT)> , <&macro_tap &kp LC(LS(RIGHT));
+            bindings = <&macro_tap &kp LC(LEFT) &kp LC(LS(RIGHT))>;
+        };
+        MCR_selP: sel_word_prv {
+            label = "macro_selectword_previous";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp LC(LEFT) &kp LC(LEFT) &kp LC(LS(RIGHT))>;
+        };
+        MCR_selN: sel_word_nxt {
+            label = "macro_selectword_next";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp LC(RIGHT) &kp LC(LS(RIGHT))>;
         };
     };
 };
@@ -111,7 +123,7 @@ XXX   AS(X)             AS(C)             AS(D)             AS(V)             AS
                         label = "Nav";
                         bindings = <
 
-XXX   KNA               Win_FND          Win_FND            Win_FND           &kp DEL     /**/  Win_CUT           &kp PG_UP         &kp UP            &kp PG_DN         TS(LCTRL)      XXX  
+XXX   Win_FND           &MCR_selP        &MCR_selC          &MCR_selN         &kp DEL     /**/  Win_CUT           &kp PG_UP         &kp UP            &kp PG_DN         TS(LCTRL)      XXX  
 XXX   KNA               KNA              KNA                KNA               Win_PST     /**/  Win_CPY           &kp LEFT          &kp DOWN          &kp RIGHT         TS(LSHFT)      XXX  
 XXX   KNA               KNA              KNA                KNA               Win_RDO     /**/  Win_UDO           &kp HOME          KNA               &kp END           &sk LALT       XXX  
                                          KNA                &lt BASE SPACE    &lt SYM TAB /**/  &lt NUM RET       KNA               &tog NAV
