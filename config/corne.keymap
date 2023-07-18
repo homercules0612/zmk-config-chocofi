@@ -17,11 +17,12 @@
 #define TS(keycode) &ts keycode keycode       // togglestick
 
 // Windows Clipboard shortcuts
-#define M_RDO  &kp LC(Y)
-#define M_PST  &kp LC(V)
-#define M_CPY  &kp LC(C)
-#define M_CUT  &kp LC(X)
-#define M_UDO  &kp LC(Z)
+#define Win_RDO &kp LC(Y)
+#define Win_PST &kp LC(V)
+#define Win_CPY &kp LC(C)
+#define Win_CUT &kp LC(X)
+#define Win_UDO &kp LC(Z)
+#define Win_FND &kp LC(F)
 
 // Layer definition
 #define BASE   0
@@ -29,55 +30,34 @@
 #define NUM    2
 #define SYM    3
 #define BLU    4
-//#define U_MOUSE  5
+//#define VIM   5
 //#define U_MEDIA  6
 //#define U_NUM    7
 //#define U_SYM    8
 //#define U_FUN    9
 
 / {
+    macros {
+        MCR_selC: sel_word_cur {
+            label = "macro_select_word_current";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp LC(LEFT)> , <&macro_tap &kp LC(LS(RIGHT));
+        };
+    };
+};
+
+/ {
     combos {
         compatible = "zmk,combos";
-        combo_esc  {
-            timeout-ms = <50>;
-            key-positions = <1 2>;
-            bindings = <&kp ESC>;
-        };
-        combo_bspcL {
-            timeout-ms = <50>;
-            key-positions = <15 16>;
-            bindings = <&kp BSPC>;
-        };
-        combo_delL  {
-            timeout-ms = <50>;
-            key-positions = <3 4>;
-            bindings = <&kp DEL>;
-        };
-        combo_sysrstL {
-            timeout-ms = <50>;
-            key-positions = <1 5>;
-            bindings = <&sys_reset>;
-        };
-        combo_bspcR {
-            timeout-ms = <50>;
-            key-positions = <19 20>;
-            bindings = <&kp BSPC>;
-        };
-        combo_delR  {
-            timeout-ms = <50>;
-            key-positions = <7 8>;
-            bindings = <&kp DEL>;
-        };
-        combo_sysrstR {
-            timeout-ms = <50>;
-            key-positions = <6 10>;
-            bindings = <&sys_reset>;
-        };
-        combo_blu_layer {
-            timeout-ms = <50>;
-            key-positions = <13 25>;
-            bindings = <&tog BLU>;
-        };
+        combo_bspcL     { timeout-ms = <50>; key-positions = <15 16>; bindings = <&kp BSPC>;   };
+        combo_bspcR     { timeout-ms = <50>; key-positions = <19 20>; bindings = <&kp BSPC>;   };
+        combo_delL      { timeout-ms = <50>; key-positions = < 3  4>; bindings = <&kp DEL>;    };
+        combo_delR      { timeout-ms = <50>; key-positions = < 7  8>; bindings = <&kp DEL>;    };
+        combo_sysrstL   { timeout-ms = <50>; key-positions = < 1  5>; bindings = <&sys_reset>; };
+        combo_sysrstR   { timeout-ms = <50>; key-positions = < 6 10>; bindings = <&sys_reset>; };
+        combo_esc       { timeout-ms = <50>; key-positions = < 1  2>; bindings = <&kp ESC>;    };
+        combo_blu_layer { timeout-ms = <50>; key-positions = <13 25>; bindings = <&tog BLU>;   };
     };
 };
 
@@ -87,7 +67,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "AUTO_SHIFT";
             #binding-cells = <2>;
-            tapping_term_ms = <200>;
+            tapping_term_ms = <150>;
             quick_tap_ms = <0>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
@@ -99,6 +79,14 @@
             tapping_term_ms = <150>;
             flavor = "tap-preferred";
             bindings = <&sk>, <&kt>;
+        };
+        cc: caps_ctr {
+          compatible = "zmk,behavior-hold-tap";
+          label = "esc_cword";
+          #binding-cells = <2>;
+          tapping_term_ms = <200>;
+          flavor = "tap-preferred";
+          bindings = <&kp>, <&caps_word>;
         };
      };
 
@@ -113,7 +101,7 @@
 XXX   AS(Q)             AS(W)             AS(F)             AS(P)             AS(B)       /**/  AS(J)             AS(L)             AS(U)             AS(Y)             AS(SQT)        XXX  
 XXX   AS(A)             AS(R)             AS(S)             AS(T)             AS(G)       /**/  AS(M)             AS(N)             AS(E)             AS(I)             AS(O)          XXX  
 XXX   AS(X)             AS(C)             AS(D)             AS(V)             AS(Z)       /**/  AS(K)             AS(H)             &mt BSLH COMMA    &mt FSLH DOT      &mt EXCL QMARK XXX  
-                                          &caps_word        &lt NAV SPACE     &lt SYM TAB /**/  &lt NUM RET       KNA               &tog NAV
+                                          &cc LCTRL 0       &lt NAV SPACE     &lt SYM TAB /**/  &lt NUM RET       KNA               &tog NAV
  
                         >;
                 };
@@ -123,9 +111,9 @@ XXX   AS(X)             AS(C)             AS(D)             AS(V)             AS
                         label = "Nav";
                         bindings = <
 
-XXX   KNA               KNA              KNA                KNA               &kp DEL     /**/  M_CUT             &kp PG_UP         &kp UP            &kp PG_DN         TS(LCTRL)      XXX  
-XXX   KNA               KNA              KNA                KNA               M_PST       /**/  M_CPY             &kp LEFT          &kp DOWN          &kp RIGHT         TS(LSHFT)      XXX  
-XXX   KNA               KNA              KNA                KNA               M_RDO       /**/  M_UDO             &kp HOME          KNA               &kp END           &sk LALT       XXX  
+XXX   KNA               Win_FND          Win_FND            Win_FND           &kp DEL     /**/  Win_CUT           &kp PG_UP         &kp UP            &kp PG_DN         TS(LCTRL)      XXX  
+XXX   KNA               KNA              KNA                KNA               Win_PST     /**/  Win_CPY           &kp LEFT          &kp DOWN          &kp RIGHT         TS(LSHFT)      XXX  
+XXX   KNA               KNA              KNA                KNA               Win_RDO     /**/  Win_UDO           &kp HOME          KNA               &kp END           &sk LALT       XXX  
                                          KNA                &lt BASE SPACE    &lt SYM TAB /**/  &lt NUM RET       KNA               &tog NAV
 
                         >;
