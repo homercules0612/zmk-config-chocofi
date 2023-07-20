@@ -114,7 +114,7 @@
 XXX   AS(Q)             AS(W)             AS(F)             AS(P)             AS(B)       /**/  AS(J)             AS(L)             AS(U)             AS(Y)             AS(SQT)        XXX  
 XXX   AS(A)             AS(R)             AS(S)             AS(T)             AS(G)       /**/  AS(M)             AS(N)             AS(E)             AS(I)             AS(O)          XXX  
 XXX   AS(X)             AS(C)             AS(D)             AS(V)             AS(Z)       /**/  AS(K)             AS(H)             &mt BSLH COMMA    &mt FSLH DOT      &mt EXCL QMARK XXX  
-                                          &cc LCTRL 0       &lt WNAV SPACE    &lt SYM TAB /**/  &lt NUM RET       KNA               &to ALPHA
+                                          &cc LCTRL 0       &lt WNAV SPACE    &lt SYM TAB /**/  &lt NUM RET       KNA               &to WNAV
  
                         >;
                 };
@@ -141,7 +141,7 @@ XXX   AS(X)             AS(C)             AS(D)             AS(V)             AS
 XXX   Win_REP           &MCR_selC        &MCR_selP          &MCR_selN         &kp DEL     /**/  Win_CUT           &kp PG_UP         &kp UP            &kp PG_DN         TS(LCTRL)      XXX  
 XXX   &kp LC(S)         KNA              KNA                KNA               Win_PST     /**/  Win_CPY           &kp LEFT          &kp DOWN          &kp RIGHT         TS(LSHFT)      XXX  
 XXX   KNA               KNA              KNA                KNA               Win_RDO     /**/  Win_UDO           &kp HOME          KNA               &kp END           &sk LALT       XXX  
-                                         KNA                &lt ALPHA SPACE   &lt SYM TAB /**/  &lt NUM RET       KNA               &to ALPHA
+                                         KNA                &lt LAUNCH SPACE  &lt SYM TAB /**/  &lt NUM RET       KNA               &to LAUNCH
 
                         >;
                 };
