@@ -22,19 +22,20 @@
 #define Win_CPY &kp LC(C)
 #define Win_CUT &kp LC(X)
 #define Win_UDO &kp LC(Z)
-#define Win_FND &kp LC(F)
+#define Win_REP &kp LC(H)
 
 // Layer definition
-#define BASE   0
-#define NAV    1
-#define NUM    2
-#define SYM    3
-#define BLU    4
-//#define VIM   5
-//#define U_MEDIA  6
-//#define U_NUM    7
-//#define U_SYM    8
-//#define U_FUN    9
+#define LAUNCH   0
+#define BASE     1
+#define WNAV     2
+#define NUM      3
+#define SYM      4
+#define BLU      5
+//#define VIM   6
+//#define U_MEDIA  7
+//#define U_NUM    8
+//#define U_SYM    9
+//#define U_FUN    10
 
 / {
     macros {
@@ -105,6 +106,20 @@
      keymap {
                 compatible = "zmk,keymap";
 
+                launch_layer {
+
+                        label = "Launch";
+                        bindings = <
+
+XXX   AS(Q)             AS(W)             AS(F)             AS(P)             AS(B)       /**/  AS(J)             AS(L)             AS(U)             AS(Y)             AS(SQT)        XXX  
+XXX   AS(A)             AS(R)             AS(S)             AS(T)             AS(G)       /**/  AS(M)             AS(N)             AS(E)             AS(I)             AS(O)          XXX  
+XXX   AS(X)             AS(C)             AS(D)             AS(V)             AS(Z)       /**/  AS(K)             AS(H)             &mt BSLH COMMA    &mt FSLH DOT      &mt EXCL QMARK XXX  
+                                          &cc LCTRL 0       &lt WNAV SPACE    &lt SYM TAB /**/  &lt NUM RET       KNA               &to BASE
+ 
+                        >;
+                };
+
+
                 base_layer {
 
                         label = "Base";
@@ -113,27 +128,27 @@
 XXX   AS(Q)             AS(W)             AS(F)             AS(P)             AS(B)       /**/  AS(J)             AS(L)             AS(U)             AS(Y)             AS(SQT)        XXX  
 XXX   AS(A)             AS(R)             AS(S)             AS(T)             AS(G)       /**/  AS(M)             AS(N)             AS(E)             AS(I)             AS(O)          XXX  
 XXX   AS(X)             AS(C)             AS(D)             AS(V)             AS(Z)       /**/  AS(K)             AS(H)             &mt BSLH COMMA    &mt FSLH DOT      &mt EXCL QMARK XXX  
-                                          &cc LCTRL 0       &lt NAV SPACE     &lt SYM TAB /**/  &lt NUM RET       KNA               &tog NAV
+                                          &cc LCTRL 0       &lt WNAV SPACE    &lt SYM TAB /**/  &lt NUM RET       KNA               &to WNAV
  
                         >;
                 };
 
-                nav_layer {
+                win_nav_layer {
 
-                        label = "Nav";
+                        label = "WinNav";
                         bindings = <
 
-XXX   Win_FND           &MCR_selP        &MCR_selC          &MCR_selN         &kp DEL     /**/  Win_CUT           &kp PG_UP         &kp UP            &kp PG_DN         TS(LCTRL)      XXX  
-XXX   KNA               KNA              KNA                KNA               Win_PST     /**/  Win_CPY           &kp LEFT          &kp DOWN          &kp RIGHT         TS(LSHFT)      XXX  
+XXX   Win_REP           &MCR_selC        &MCR_selP          &MCR_selN         &kp DEL     /**/  Win_CUT           &kp PG_UP         &kp UP            &kp PG_DN         TS(LCTRL)      XXX  
+XXX   &kp LC(S)         KNA              KNA                KNA               Win_PST     /**/  Win_CPY           &kp LEFT          &kp DOWN          &kp RIGHT         TS(LSHFT)      XXX  
 XXX   KNA               KNA              KNA                KNA               Win_RDO     /**/  Win_UDO           &kp HOME          KNA               &kp END           &sk LALT       XXX  
-                                         KNA                &lt BASE SPACE    &lt SYM TAB /**/  &lt NUM RET       KNA               &tog NAV
+                                         KNA                &lt BASE SPACE    &lt SYM TAB /**/  &lt NUM RET       KNA               &to BASE
 
                         >;
                 };
 
                 num_layer {
 
-                        label = "Num";
+                        label = "Number";
                         bindings = <
 
 XXX   &mt TILDE CARET   AS(N7)           AS(N8)             AS(N9)            AS(N0)      /**/  &mt ASTRK PLUS    &mt UNDER MINUS   &mt RBRC LBRC     KNA               KNA            XXX  
@@ -146,7 +161,7 @@ XXX   &mt HASH AMPS     AS(N1)           AS(N2)             AS(N3)            AS
 
                 sym_layer {
 
-                        label = "Sym";
+                        label = "Symbol";
                         bindings = <
 
 XXX   &mt GRAVE TILDE   &mt N7 CARET     &mt N8 FSLH        &mt N9 ASTRK      &mt N0 AT         &mt ASTRK PLUS    &mt UNDER MINUS   &mt RBRC LBRC     KNA               KNA            XXX  
@@ -159,12 +174,12 @@ XXX   &mt HASH AMPS     &mt N1 DOT       &mt N2 LT          &mt N3 GT         &m
 
                 blu_layer {
 
-                        label = "Blu";
+                        label = "BluFun";
                         bindings = <
                         
 XXX   &kp F1            &kp F2           &kp F3             &kp F4            &kp F5      /**/  &kp F6            &kp F7            &kp F8            &kp F9            &kp F10        XXX  
 XXX   &bt BT_SEL 0      &bt BT_SEL 1     &bt BT_SEL 2       &bt BT_SEL 3      &bt BT_SEL 4      KNA               KNA               KNA               &kp F11           &kp F12        XXX  
-XXX   &ext_power EP_TOG KNA              KNA                KNA               KNA         /**/  KNA               KNA               KNA               KNA               KNA            XXX  
+XXX   KNA               KNA              KNA                KNA               KNA         /**/  KNA               KNA               KNA               KNA            &ext_power EP_TOG XXX  
                                          &bt BT_CLR         KNA               &bt BT_NXT  /**/  &bt BT_PRV        KNA               KNA   
 
                         >;
