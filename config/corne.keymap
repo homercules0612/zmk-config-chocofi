@@ -106,7 +106,7 @@
      keymap {
                 compatible = "zmk,keymap";
 
-                launch_layer {
+                base_layer {
 
                         label = "Launch";
                         bindings = <
@@ -120,7 +120,7 @@ XXX   AS(X)             AS(C)             AS(D)             AS(V)             AS
                 };
 
 
-                base_layer {
+                alpha_layer {
 
                         label = "Alpha";
                         bindings = <
