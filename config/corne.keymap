@@ -154,7 +154,7 @@ XXX   KNA               KNA              KNA                KNA               Wi
 XXX   &mt TILDE CARET   AS(N7)           AS(N8)             AS(N9)            AS(N0)      /**/  &mt ASTRK PLUS    &mt UNDER MINUS   &mt RBRC LBRC     KNA               KNA            XXX  
 XXX   &mt PRCNT PIPE    AS(N4)           AS(N5)             AS(N6)            AS(DOT)     /**/  &mt BSLH FSLH     &mt EXCL EQUAL    &mt RPAR LPAR     KNA               KNA            XXX  
 XXX   &mt HASH AMPS     AS(N1)           AS(N2)             AS(N3)            AS(COMMA)   /**/  &mt PIPE AMPS     &mt GT LT         &mt RBKT LBKT     KNA               KNA            XXX  
-                                         KNA                &lt NAV SPACE     KNA         /**/  KNA               &kp DEL           KNA   
+                                         KNA                &lt WNAV SPACE     KNA         /**/  KNA               &kp DEL           KNA   
                         
                         >;
                 };
@@ -167,7 +167,7 @@ XXX   &mt HASH AMPS     AS(N1)           AS(N2)             AS(N3)            AS
 XXX   &mt GRAVE TILDE   &mt N7 CARET     &mt N8 FSLH        &mt N9 ASTRK      &mt N0 AT         &mt ASTRK PLUS    &mt UNDER MINUS   &mt RBRC LBRC     KNA               KNA            XXX  
 XXX   &mt PRCNT PIPE    &mt N4 COMMA     &mt N5 SEMI        &mt N6 COLON      &mt DLLR QMARK    &mt BSLH FSLH     &mt EXCL EQUAL    &mt RPAR LPAR     KNA               KNA            XXX  
 XXX   &mt HASH AMPS     &mt N1 DOT       &mt N2 LT          &mt N3 GT         &mt SQT DQT /**/  &mt PIPE AMPS     &mt GT LT         &mt RBKT LBKT     KNA               KNA            XXX  
-                                         KNA                &lt NAV SPACE     KNA         /**/  KNA               &kp DEL           KNA                           
+                                         KNA                &lt WNAV SPACE     KNA         /**/  KNA               &kp DEL           KNA                           
 
                         >;
                 };
