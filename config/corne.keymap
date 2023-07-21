@@ -25,12 +25,12 @@
 #define Win_REP &kp LC(H)
 
 // Layer definition
-#define LAUNCH   0
-#define WNAV     1
-#define NUM      2
-#define SYM      3
-#define BLU      4
-#define ALPHA    5
+#define	LAUNCH	0
+#define	ALPHA	1
+#define	WNAV	2
+#define	NUM	    3
+#define	SYM	    4
+#define	BLU	    5
 //#define VIM   6
 //#define U_MEDIA  7
 //#define U_NUM    8
@@ -106,7 +106,7 @@
      keymap {
                 compatible = "zmk,keymap";
 
-                base_layer {
+                launch_layer {
 
                         label = "Launch";
                         bindings = <
@@ -119,6 +119,19 @@ XXX   AS(X)             AS(C)             AS(D)             AS(V)             AS
                         >;
                 };
 
+                alpha_layer {
+
+                        label = "Alpha";
+                        bindings = <
+
+XXX   AS(Q)             AS(W)             AS(F)             AS(P)             AS(B)       /**/  AS(J)             AS(L)             AS(U)             AS(Y)             AS(SQT)        XXX  
+XXX   AS(A)             AS(R)             AS(S)             AS(T)             AS(G)       /**/  AS(M)             AS(N)             AS(E)             AS(I)             AS(O)          XXX  
+XXX   AS(X)             AS(C)             AS(D)             AS(V)             AS(Z)       /**/  AS(K)             AS(H)             &mt BSLH COMMA    &mt FSLH DOT      &mt EXCL QMARK XXX  
+                                          &cc LCTRL 0       &lt WNAV SPACE    &lt SYM TAB /**/  &lt NUM RET       KNA               &to WNAV
+ 
+                        >;
+                };
+
                 win_nav_layer {
 
                         label = "WinNav";
@@ -127,7 +140,7 @@ XXX   AS(X)             AS(C)             AS(D)             AS(V)             AS
 XXX   Win_REP           &MCR_selC        &MCR_selP          &MCR_selN         &kp DEL     /**/  Win_CUT           &kp PG_UP         &kp UP            &kp PG_DN         TS(LCTRL)      XXX  
 XXX   &kp LC(S)         KNA              KNA                KNA               Win_PST     /**/  Win_CPY           &kp LEFT          &kp DOWN          &kp RIGHT         TS(LSHFT)      XXX  
 XXX   KNA               KNA              KNA                KNA               Win_RDO     /**/  Win_UDO           &kp HOME          KNA               &kp END           &sk LALT       XXX  
-                                         KNA                &lt ALPHA SPACE   &lt SYM TAB /**/  &lt NUM RET       KNA               &to ALPHA
+                                         KNA                KNA               &lt SYM TAB /**/  &lt NUM RET       KNA               &to ALPHA
 
                         >;
                 };
@@ -168,19 +181,6 @@ XXX   &bt BT_SEL 0      &bt BT_SEL 1     &bt BT_SEL 2       &bt BT_SEL 3      &b
 XXX   KNA               KNA              KNA                KNA               KNA         /**/  KNA               KNA               KNA               KNA            &ext_power EP_TOG XXX  
                                          &bt BT_CLR         KNA               &bt BT_NXT  /**/  &bt BT_PRV        KNA               KNA   
 
-                        >;
-                };
-
-                alpha_layer {
-
-                        label = "Alpha";
-                        bindings = <
-
-XXX   AS(Q)             AS(W)             AS(F)             AS(P)             AS(B)       /**/  AS(J)             AS(L)             AS(U)             AS(Y)             AS(SQT)        XXX  
-XXX   AS(A)             AS(R)             AS(S)             AS(T)             AS(G)       /**/  AS(M)             AS(N)             AS(E)             AS(I)             AS(O)          XXX  
-XXX   AS(X)             AS(C)             AS(D)             AS(V)             AS(Z)       /**/  AS(K)             AS(H)             &mt BSLH COMMA    &mt FSLH DOT      &mt EXCL QMARK XXX  
-                                          &cc LCTRL 0       &lt WNAV SPACE    &lt SYM TAB /**/  &lt NUM RET       KNA               &to WNAV
- 
                         >;
                 };
 
