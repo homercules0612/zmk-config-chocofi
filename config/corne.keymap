@@ -23,6 +23,7 @@
 #define Win_CUT &kp LC(X)
 #define Win_UDO &kp LC(Z)
 #define Win_REP &kp LC(H)
+#define Win_SLA &kp LC(A)
 
 // Layer definition
 #define	LAUNCH	0
@@ -101,6 +102,13 @@
           flavor = "hold-preferred";
           bindings = <&kp>, <&caps_word>;
         };
+        tdL: tap_dance_mod_left {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_MOD_LEFT";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&cc LCTRL 0>, <&mt LSHFT ESC>, <&mt LALT LG(L)>;
+        };
      };
 
      keymap {
@@ -114,7 +122,7 @@
 XXX   AS(Q)             AS(W)             AS(F)             AS(P)             AS(B)       /**/  AS(J)             AS(L)             AS(U)             AS(Y)             AS(SQT)        XXX  
 XXX   AS(A)             AS(R)             AS(S)             AS(T)             AS(G)       /**/  AS(M)             AS(N)             AS(E)             AS(I)             AS(O)          XXX  
 XXX   AS(X)             AS(C)             AS(D)             AS(V)             AS(Z)       /**/  AS(K)             AS(H)             &mt BSLH COMMA    &mt FSLH DOT      &mt EXCL QMARK XXX  
-                                          &cc LCTRL 0       &lt WNAV SPACE    &lt SYM TAB /**/  &lt NUM RET       KNA               &to ALPHA
+                                          &tdL              &lt WNAV SPACE    &lt SYM TAB /**/  &lt NUM RET       KNA               &to ALPHA
  
                         >;
                 };
