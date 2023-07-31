@@ -148,7 +148,7 @@ XXX   AS(X)             AS(C)             AS(D)             AS(V)             AS
 
 XXX   Win_REP           &MCR_selP        &MCR_selN          Win_CUT           &kp DEL           Win_CUT           &kp PG_UP         &kp UP            &kp PG_DN         TS(LCTRL)      XXX  
 XXX   &kp LC(S)         KNA              KNA                Win_CPY           Win_PST           Win_CPY           &kp LEFT          &kp DOWN          &kp RIGHT         TS(LSHFT)      XXX  
-XXX   Win_MIN           KNA              KNA                Win_UDO           Win_RDO           Win_UDO           &kp HOME          F3                &kp END           &sk LALT       XXX  
+XXX   Win_MIN           KNA              KNA                Win_UDO           Win_RDO           Win_UDO           &kp HOME          &kp F3            &kp END           &sk LALT       XXX  
                                          KNA                KNA               &lt SYM TAB       &lt NUM RET       KNA               &to ALPHA
 
                         >;
