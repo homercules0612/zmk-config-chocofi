@@ -24,14 +24,15 @@
 #define Win_UDO &kp LC(Z)
 #define Win_REP &kp LC(H)
 #define Win_SLA &kp LC(A)
+#define Win_MIN &kp LG(DOWN)
 
 // Layer definition
-#define	LAUNCH	0
-#define	ALPHA	1
-#define	WNAV	2
-#define	NUM	    3
-#define	SYM	    4
-#define	BLU	    5
+#define	LAUNCH  0
+#define	ALPHA   1
+#define	WNAV    2
+#define	NUM     3
+#define	SYM     4
+#define	BLU     5
 //#define VIM   6
 //#define U_MEDIA  7
 //#define U_NUM    8
@@ -119,10 +120,10 @@
                         label = "Launch";
                         bindings = <
 
-XXX   AS(Q)             AS(W)             AS(F)             AS(P)             AS(B)       /**/  AS(J)             AS(L)             AS(U)             AS(Y)             AS(SQT)        XXX  
-XXX   AS(A)             AS(R)             AS(S)             AS(T)             AS(G)       /**/  AS(M)             AS(N)             AS(E)             AS(I)             AS(O)          XXX  
-XXX   AS(X)             AS(C)             AS(D)             AS(V)             AS(Z)       /**/  AS(K)             AS(H)             &mt BSLH COMMA    &mt FSLH DOT      &mt EXCL QMARK XXX  
-                                          &cc LCTRL 0       &lt WNAV SPACE    &lt SYM TAB /**/  &lt NUM RET       KNA               &to ALPHA
+XXX   AS(Q)             AS(W)             AS(F)             AS(P)             AS(B)             AS(J)             AS(L)             AS(U)             AS(Y)             AS(SQT)        XXX  
+XXX   AS(A)             AS(R)             AS(S)             AS(T)             AS(G)             AS(M)             AS(N)             AS(E)             AS(I)             AS(O)          XXX  
+XXX   AS(X)             AS(C)             AS(D)             AS(V)             AS(Z)             AS(K)             AS(H)             &mt BSLH COMMA    &mt FSLH DOT      &mt EXCL QMARK XXX  
+                                          &cc LCTRL 0       &lt WNAV SPACE    &lt SYM TAB       &lt NUM RET       KNA               &to ALPHA
  
                         >;
                 };
@@ -132,10 +133,10 @@ XXX   AS(X)             AS(C)             AS(D)             AS(V)             AS
                         label = "Alpha";
                         bindings = <
 
-XXX   AS(Q)             AS(W)             AS(F)             AS(P)             AS(B)       /**/  AS(J)             AS(L)             AS(U)             AS(Y)             AS(SQT)        XXX  
-XXX   AS(A)             AS(R)             AS(S)             AS(T)             AS(G)       /**/  AS(M)             AS(N)             AS(E)             AS(I)             AS(O)          XXX  
-XXX   AS(X)             AS(C)             AS(D)             AS(V)             AS(Z)       /**/  AS(K)             AS(H)             &mt BSLH COMMA    &mt FSLH DOT      &mt EXCL QMARK XXX  
-                                          &tdL              &lt WNAV SPACE    &lt SYM TAB /**/  &lt NUM RET       KNA               &to WNAV
+XXX   AS(Q)             AS(W)             AS(F)             AS(P)             AS(B)             AS(J)             AS(L)             AS(U)             AS(Y)             AS(SQT)        XXX  
+XXX   AS(A)             AS(R)             AS(S)             AS(T)             AS(G)             AS(M)             AS(N)             AS(E)             AS(I)             AS(O)          XXX  
+XXX   AS(X)             AS(C)             AS(D)             AS(V)             AS(Z)             AS(K)             AS(H)             &mt BSLH COMMA    &mt FSLH DOT      &mt EXCL QMARK XXX  
+                                          &tdL              &lt WNAV SPACE    &lt SYM TAB       &lt NUM RET       KNA               &to WNAV
  
                         >;
                 };
@@ -145,10 +146,10 @@ XXX   AS(X)             AS(C)             AS(D)             AS(V)             AS
                         label = "WinNav";
                         bindings = <
 
-XXX   Win_REP           &MCR_selC        &MCR_selP          &MCR_selN         &kp DEL     /**/  Win_CUT           &kp PG_UP         &kp UP            &kp PG_DN         TS(LCTRL)      XXX  
-XXX   &kp LC(S)         KNA              KNA                KNA               Win_PST     /**/  Win_CPY           &kp LEFT          &kp DOWN          &kp RIGHT         TS(LSHFT)      XXX  
-XXX   KNA               KNA              KNA                KNA               Win_RDO     /**/  Win_UDO           &kp HOME          KNA               &kp END           &sk LALT       XXX  
-                                         KNA                KNA               &lt SYM TAB /**/  &lt NUM RET       KNA               &to ALPHA
+XXX   Win_REP           &MCR_selP        &MCR_selN          Win_CUT           &kp DEL           Win_CUT           &kp PG_UP         &kp UP            &kp PG_DN         TS(LCTRL)      XXX  
+XXX   &kp LC(S)         KNA              KNA                Win_CPY           Win_PST           Win_CPY           &kp LEFT          &kp DOWN          &kp RIGHT         TS(LSHFT)      XXX  
+XXX   Win_MIN           KNA              KNA                Win_UDO           Win_RDO           Win_UDO           &kp HOME          F3                &kp END           &sk LALT       XXX  
+                                         KNA                KNA               &lt SYM TAB       &lt NUM RET       KNA               &to ALPHA
 
                         >;
                 };
@@ -161,7 +162,7 @@ XXX   KNA               KNA              KNA                KNA               Wi
 XXX   &mt TILDE CARET   AS(N7)           AS(N8)             AS(N9)            AS(N0)      /**/  &mt ASTRK PLUS    &mt UNDER MINUS   &mt RBRC LBRC     KNA               KNA            XXX  
 XXX   &mt PRCNT PIPE    AS(N4)           AS(N5)             AS(N6)            AS(DOT)     /**/  &mt BSLH FSLH     &mt EXCL EQUAL    &mt RPAR LPAR     KNA               KNA            XXX  
 XXX   &mt HASH AMPS     AS(N1)           AS(N2)             AS(N3)            AS(COMMA)   /**/  &mt PIPE AMPS     &mt GT LT         &mt RBKT LBKT     KNA               KNA            XXX  
-                                         KNA                &lt WNAV SPACE     KNA         /**/  KNA               &kp DEL           KNA   
+                                         KNA                &lt WNAV SPACE    KNA         /**/  KNA               &kp DEL           KNA   
                         
                         >;
                 };
@@ -174,7 +175,7 @@ XXX   &mt HASH AMPS     AS(N1)           AS(N2)             AS(N3)            AS
 XXX   &mt GRAVE TILDE   &mt N7 CARET     &mt N8 FSLH        &mt N9 ASTRK      &mt N0 AT         &mt ASTRK PLUS    &mt UNDER MINUS   &mt RBRC LBRC     KNA               KNA            XXX  
 XXX   &mt PRCNT PIPE    &mt N4 COMMA     &mt N5 SEMI        &mt N6 COLON      &mt DLLR QMARK    &mt BSLH FSLH     &mt EXCL EQUAL    &mt RPAR LPAR     KNA               KNA            XXX  
 XXX   &mt HASH AMPS     &mt N1 DOT       &mt N2 LT          &mt N3 GT         &mt SQT DQT /**/  &mt PIPE AMPS     &mt GT LT         &mt RBKT LBKT     KNA               KNA            XXX  
-                                         KNA                &lt WNAV SPACE     KNA         /**/  KNA               &kp DEL           KNA                           
+                                         KNA                &lt WNAV SPACE    KNA         /**/  KNA               &kp DEL           KNA                           
 
                         >;
                 };
