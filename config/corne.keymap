@@ -72,7 +72,7 @@
         combo_sysrstL   { timeout-ms = <50>; key-positions = < 1  5>; bindings = <&sys_reset>; };
         combo_sysrstR   { timeout-ms = <50>; key-positions = < 6 10>; bindings = <&sys_reset>; };
         combo_esc       { timeout-ms = <50>; key-positions = < 1  2>; bindings = <&kp ESC>;    };
-        combo_blu_layer { timeout-ms = <50>; key-positions = <13 25>; bindings = <&tog BLU>;   };
+        combo_blu_layer { timeout-ms = <50>; key-positions = < 1 25>; bindings = <&tog BLU>;   };
     };
 };
 
@@ -147,7 +147,7 @@ XXX   AS(X)             AS(C)             AS(D)             AS(V)             AS
                         bindings = <
 
 XXX   Win_REP           &MCR_selP        &MCR_selN          Win_CUT           &kp DEL           Win_CUT           &kp PG_UP         &kp UP            &kp PG_DN         KNA              XXX  
-XXX   &kp LC(S)         KNA              KNA                Win_CPY           Win_PST           Win_CPY           &kp LEFT          &kp DOWN          &kp RIGHT         &kp K_CMENU      XXX  
+XXX   &kp LC(S)         &kp LC(LS(TAB))  &kp LC(TAB)        Win_CPY           Win_PST           Win_CPY           &kp LEFT          &kp DOWN          &kp RIGHT         &kp K_CMENU      XXX  
 XXX   Win_MIN           KNA              KNA                Win_UDO           Win_RDO           Win_UDO           &kp HOME          &kp F3            &kp END           KNA              XXX  
                                          KNA                KNA               &lt SYM TAB       &lt NUM RET       KNA               &to ALPHA
 
